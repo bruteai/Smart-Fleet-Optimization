@@ -1,1 +1,48 @@
-# index.html - placeholder content
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fleet Optimization Dashboard</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    .result { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fleet Optimization Dashboard</h1>
+    <form id="predictForm">
+      <label for="model_type">Choose Model:</label>
+      <select id="model_type">
+        <option value="fuel">Fuel Inefficiency</option>
+        <option value="delay">Route Delay</option>
+        <option value="maintenance">Maintenance Risk</option>
+      </select><br/><br/>
+      <label for="input_data">Input Data (comma separated):</label>
+      <input type="text" id="input_data" placeholder="e.g. 0.5,1.2,3.4" style="width:100%;"><br/><br/>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="result">
+      <h3>Result:</h3>
+      <p id="resultText"></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('predictForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var modelType = document.getElementById('model_type').value;
+      var inputData = document.getElementById('input_data').value.split(',').map(Number);
+      
+      fetch('http://localhost:5000/predict', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({model_type: modelType, input_data: inputData})
+      })
+      .then(resp => resp.json())
+      .then(data => document.getElementById('resultText').innerText = JSON.stringify(data))
+      .catch(err => document.getElementById('resultText').innerText = 'Error: ' + err);
+    });
+  </script>
+</body>
+</html>
