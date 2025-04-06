@@ -2,7 +2,7 @@
 
 Smart Fleet Optimization with Sensor Fusion is a machine learning system designed to improve how vehicle fleets operate. By combining data from multiple sensors including CAN bus logs, GPS routes, camera video, and engine sound recordings, the system learns to identify patterns that can lead to fuel waste, delivery delays, or maintenance issues.
 
-The aim of this project is to provides a complete end to end solution. It handles data collection and processing, builds predictive models, and offers a lightweight interface for real time usage. 
+The aim of this project is to provide a complete end to end solution. It handles data collection and processing, builds predictive models, and offers a lightweight interface for real time usage. 
 (In Progress > Adding additional features soon)
 
 ## Key Features
