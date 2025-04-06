@@ -1,10 +1,5 @@
 # Smart Fleet Optimization with Sensor Fusion
-
-image_url = "https://raw.githubusercontent.com/bruteai/Smart-Fleet-Optimization/dashboard_preview.png"  # Replace with actual path
-readme_path = "/mnt/data/README_with_image.md"
-
-readme_content = f"""
-![Fleet Dashboard Preview]({image_url})
+![Dashboard Screenshot](Dashboard_Preview.PNG)
 
 Smart Fleet Optimization with Sensor Fusion is a machine learning system designed to improve how vehicle fleets operate. By combining data from multiple sensors including CAN bus logs, GPS routes, camera video, and engine sound recordings, the system learns to identify patterns that can lead to fuel waste, delivery delays, or maintenance issues.
 
